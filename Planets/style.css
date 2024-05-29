@@ -3,8 +3,9 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-
 
 #planet {
     width: 40em;
@@ -18,12 +19,26 @@ body {
 }
 
 #missile {
-    background-color: gray;
-    animation-name: missile-Ani;
-    animation-duration: 8s;
+    /* animation-name: missile-Ani;
+    animation-duration: 8s; */
+    opacity: 0;
     position: absolute;
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
+    transform: rotate(90deg);
+}
+#missile img {
+    width: 100%;
+    height: 100%;
+}
+
+.BTN {
+    background-color: rgba(17, 10, 110, 0.452);
+    color: white;
+    padding: 0.5em;
+    font-size: 2em;
+    border: solid 0.09em white;
+    border-radius: 25%;
 }
 
 @keyframes missile-Ani{
@@ -32,21 +47,48 @@ body {
         left: 10px;
 
     }
-    65% {
-        top: 20em;
-        left: 44em;
+    52% {
+        /* top: 19em;
+        left: 59em; */
+        top: 35%;
+        left: 49%;
         width: 2em;
         height: 2em;
-        background-color: gray;
+        background-color: none;
+        background-image: none;
+    }
+    56% {
+        rotate: -45deg;
+        top: 35%;
+        left: 49%;
+        width: 2em;
+        height: 2em;
+        background-image: url("Imgs/Boom.png");
+    }
+    80% {
+        background-image: url("Imgs/Boom.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: transparent;
+        /* top: -20em;
+        left: -10em; */
+        top: -33%;
+        left: -10%;
+        width: 120%;
+        height: 150%;
+        rotate: -90deg;
+        opacity: 1;
     }
     100% {
         background-image: url("Imgs/Boom.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-color: transparent;
-        top: -3em;
-        left: 0em;
-        width: 85em;
-        height: 50em;
+        top: -33%;
+        left: -10%;
+        width: 120%;
+        height: 150%;
+        rotate: -90deg;
+        opacity: 0;
     }
 }
